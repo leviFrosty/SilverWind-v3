@@ -1,34 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is [Silverwind's](https://silverwind.store/) official website repository.
 
-## Getting Started
+Version 3 of the site is in early stages of development.
 
-First, run the development server:
+### Changes
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+1. [Sanity.io](https://www.sanity.io/) will be implement as the primary headless CMS. No more hard coded content _(hopefully)_.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. [Typescript](https://www.typescriptlang.org/) first.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+1. [Mantine.dev](https://mantine.dev/) to be used when possible for component consistency.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+1. Se separate [Firebase](https://firebase.com/) and [Sanity.io](https://www.sanity.io/) dev & prod environments.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Lessons learned
 
-## Learn More
+Things that I wish I implemented earlier.
 
-To learn more about Next.js, take a look at the following resources:
+1. A robust and consistent CI/CD pipeline makes all the difference.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Utilize branching more and separate dev/prod environments.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Abstract and refactor more than you initially may think.
 
-## Deploy on Vercel
+1. Make stupid simple verbose functions.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Use Typescript.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. [TDD](<https://en.wikipedia.org/wiki/Test-driven_development#:~:text=Test%2Ddriven%20development%20(TDD),software%20against%20all%20test%20cases.>).
+
+1. [KID](https://www.freecodecamp.org/news/why-documentation-matters-and-why-you-should-include-it-in-your-code-41ef62dd5c2f/).
