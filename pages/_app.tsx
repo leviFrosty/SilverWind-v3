@@ -1,8 +1,31 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import { AppProps } from "next/app";
+import { MantineProvider } from "@mantine/core";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+export default function App(props: AppProps) {
+  const { Component, pageProps } = props;
+
+  return (
+    <>
+      <MantineProvider
+        withGlobalStyles
+        withNormalizeCSS
+        theme={{
+          colors: {
+            purple: [
+              "#ceb6ff",
+              "#be9cff",
+              "#ad83ff",
+              "#9c69ff",
+              "#8b4fff",
+              "#7a36ff",
+              "#6a1dff",
+            ],
+          },
+          colorScheme: "light",
+        }}
+      >
+        <Component {...pageProps} />
+      </MantineProvider>
+    </>
+  );
 }
-
-export default MyApp
