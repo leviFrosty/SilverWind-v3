@@ -27,6 +27,7 @@ import NavDesktopSkeleton from "./Nav/HeaderSkeleton";
 import Link from "next/link";
 import UserSection from "./Nav/UserSection";
 import NavSkeleton from "./Nav/NavSkeleton";
+import BreadCrumbs from "./Breadcrumbs";
 
 type Props = {
   children: ReactNode;
@@ -173,6 +174,7 @@ export default function Layout({ children }: Props) {
         </Footer>
       }
     >
+      <BreadCrumbs />
       {children}
     </AppShell>
   );
