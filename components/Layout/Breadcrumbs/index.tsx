@@ -1,11 +1,11 @@
-import { Anchor, Breadcrumbs } from "@mantine/core";
+import { Anchor, Breadcrumbs, Skeleton } from "@mantine/core";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 
 export default function BreadCrumbs() {
   const router = useRouter();
-  const [items, setItems] = useState([<></>]);
+  const [items, setItems] = useState([<Skeleton key="1" />]);
 
   useEffect(() => {
     function generateBreadcrumbs() {
