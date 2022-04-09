@@ -30,10 +30,11 @@ import NavSkeleton from "./Nav/NavSkeleton";
 import BreadCrumbs from "./Breadcrumbs";
 
 type Props = {
+  skeletonMode?: boolean;
   children: ReactNode;
 };
 
-export default function Layout({ children }: Props) {
+export default function Layout({ children, skeletonMode }: Props) {
   const [opened, setOpened] = useState(false);
   const isSmallScreen = useMediaQuery("(max-width: 768px )");
   const theme = useMantineTheme();
@@ -49,9 +50,8 @@ export default function Layout({ children }: Props) {
       "companyLogo",
     ],
   });
-  // TODO: Add ErrorBoundary for failed fetches
   const { data: navResponse, error } = useSWR(
-    `${strapiApiEndpoint}/navigation?${query}`,
+    !skeletonMode ? `${strapiApiEndpoint}/navigation?${query}` : null,
     fetcher
   );
   const navContent: Navigation = navResponse;

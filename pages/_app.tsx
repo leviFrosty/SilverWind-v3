@@ -1,10 +1,12 @@
 import { AppProps } from "next/app";
 import { MantineProvider } from "@mantine/core";
 import Layout from "../components/Layout";
+import { ErrorBoundary } from "react-error-boundary";
+import ErrorFallback from "../components/Layout/ErrorFallback";
+import { NotificationsProvider } from "@mantine/notifications";
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
-
   return (
     <>
       <MantineProvider
@@ -25,9 +27,13 @@ export default function App(props: AppProps) {
           colorScheme: "light",
         }}
       >
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <NotificationsProvider>
+          <ErrorBoundary FallbackComponent={ErrorFallback}>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </ErrorBoundary>
+        </NotificationsProvider>
       </MantineProvider>
     </>
   );
