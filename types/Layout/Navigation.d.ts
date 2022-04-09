@@ -1,12 +1,20 @@
+import Image from "../Image";
 import Link, { LinkWithinArray } from "../Link";
-import NavCartSection from "./NavCartSection";
+import NavUserSection from "./NavUserSection";
 
 export default interface Navigation {
-  companyTitle: string;
-  displayLogo: boolean;
-  menuSection?: {
-    id: number;
-    links: LinkWithinArray[];
+  data: {
+    attributes: {
+      companyTitle: string;
+      companyLogo: {
+        data: Image;
+      };
+      displayLogo: boolean;
+      menuSection?: {
+        id: number;
+        links: LinkWithinArray[];
+      };
+      userSection: NavUserSection;
+    };
   };
-  userSection: NavCartSection;
 }
