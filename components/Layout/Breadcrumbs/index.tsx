@@ -1,4 +1,5 @@
 import { Anchor, Breadcrumbs } from "@mantine/core";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 
@@ -34,9 +35,9 @@ export default function BreadCrumbs() {
     const crumbs = generateBreadcrumbs();
     setItems(
       crumbs.map((item, index) => (
-        <Anchor href={item.href} key={index}>
-          {item.title}
-        </Anchor>
+        <Link href={item.href} passHref key={index}>
+          <Anchor>{item.title}</Anchor>
+        </Link>
       ))
     );
   }, [router.asPath]);
