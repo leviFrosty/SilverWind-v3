@@ -148,6 +148,7 @@ export default function Layout({ children }: Props) {
                       (link) => (
                         <Link href={link.href} passHref key={link.id}>
                           <Button
+                            onClick={() => setOpened((o) => !o)}
                             fullWidth
                             color="violet"
                             variant="gradient"
