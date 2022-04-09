@@ -120,7 +120,7 @@ export default function Layout({ children }: Props) {
                 />
               </Group>
             ) : (
-              <NavDesktopSkeleton />
+              <NavDesktopSkeleton isSmallScreen={isSmallScreen} />
             )}
           </div>
         </Header>
