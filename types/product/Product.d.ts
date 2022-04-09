@@ -1,7 +1,7 @@
 import Image from "../Image";
 import Review from "./Review";
 import Tag from "./Tag";
-import Video from "./Video";
+import Video from "../Video";
 
 /*
  * Product type information from strapi backend.
